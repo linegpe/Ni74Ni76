@@ -1,0 +1,32 @@
+I want to read the decay time for Cu-76 using the data
+Copy program from Frank
+Mass is now changed to 76
+Open new TBrowser and look at z-distribution in the DSSDs
+Figure saved in Figures/working_figures as implantation_in_z.pdf
+This shows that z=5 and z=6 are most populated - insert this in read.C file
+Look at velocity distribution
+THIS DOES NOT LOOK LIKE WHAT I EXPECTED
+I had expected a gaussian curve, but instead I get the plot as saved in
+working_figures as imp_beta711.pdf.
+Assume we can separate the middle peak and choose velocities from 0.642 to 0.647
+For now, I keep kMaxbeta=33
+Also change outputfile to 76Cu_beta_t.root
+Result as shown in working_figures/decay_time.pdf
+
+I want to plot the background decay time with the same conditions as in normal decay
+Copy program from read_data/background_decay_time
+Change parameters to fit those from normal decay
+... this gives me an empty canvas???
+I forgot to change the path to the data. Changing that now.
+Fixed path to data and now get plot saved as working_figures/background_decay_time.pdf
+
+Talked to Frank:
+I have to look at the DSSDs one by one, not all together as I have done.
+(Notice that they together are different gaussian tops?)
+The velocities chosen in line 80 to 97 are not the ones i use, it is just to define the histogram
+Can change these to be from 0.62 to 0.665
+Also copy code from read_data/velocity_distribution and make it fit Cu76
+
+I want to change the read_data/velocity_distribution to fit Cu76
+Do this and get the velocities from 7 to 11 for all the DSSDs, saved as
+working_figures/velocity_distribution.pdf

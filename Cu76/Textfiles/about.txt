@@ -1,0 +1,41 @@
+Parameters found in the RIKEN data:
+
+imp.x: x-value of implantation in DSSD (similar for y and z)
+imp.tx: timing information for electron detection in DSSD
+imp.ts: time stamp -
+imp.beta35: velocity change from f3 to t5 (same for beta57 (5 to 7) and beta711 (7 to 11))
+flagall = 1: good event (flagall=0 -> Bad event that cannot be used)
+deltaz = 0: same DSSD level (1-8) (Can also use +/- 1 DSSD, but have to be more careful)
+(Recommended to use only deltaz=0) See also Frank's thesis about deltaxy which was set to be
+smaller than 2.
+All files in bg: Wrong correlations, where beta decay was detected before implantation.
+kMaxBeta: how many beta decays after implantation (If this is too high, you only get
+0 for the ones that are too much. This is not a problem)
+
+
+Notes:
+
+Do everything for Cu-76 first
+Decay time in units of time stamps: goes from 0 to 5 s (Double check velocity distribution)
+Analyze first experiment number 1 and then number 2 (filename starts with 5)
+and then add the two
+
+
+
+
+Future plans:
+
+Do everything for Cu-76 first
+
+Do Gaussian fits to all Beta F7-F11 DSSDs (All 8)
+-> Use this to implement conditions in all other read-files
+*** Ex: if (z=8) & (min_accepted_velocity < beta711 < max_accepted_velocity), then... ***
+
+With same conditions as in read.C in read_data/decay_time to plot the background decay times
+
+Make decay-chain and find out which nuclei to consider (Together with Eda?)
+
+Decay time in units of time stamps: goes from 0 to 5 s (Double check velocity distribution)
+
+Analyze first experiment number 1 and then number 2 (filename starts with 5)
+and then add the two
